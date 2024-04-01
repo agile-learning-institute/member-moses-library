@@ -1,3 +1,6 @@
+const addBookBtn = document.querySelector(".add-book");
+const addBookForm = document.querySelector(".overlay-cont");
+
 const myLibrary = [];
 
 function Book(title, author, pages, status) {
@@ -10,3 +13,13 @@ function Book(title, author, pages, status) {
     }
 }
 
+
+addBookBtn.addEventListener('click', function() {
+    addBookForm.style.visibility = "visible";
+});
+
+addBookForm.addEventListener('click', function(e) {
+    if (e.target === addBookForm) {
+        addBookForm.style.visibility = "hidden";
+    }
+});

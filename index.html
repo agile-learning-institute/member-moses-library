@@ -152,5 +152,20 @@
             </div>
         </div>
     </div>
+    <div class="overlay-cont">
+        <div class="form-cont" id="form-cont">
+            <form class="add-book-form" id="addBookForm">
+              <h3>Add New Book</h3>
+              <input class="input" type="text" id="name" placeholder="Book Name" required maxlength="100">
+              <input class="input" type="text" id="author" placeholder="Author" maxlength="100">
+              <input class="input" type="number" id="pages" placeholder="Pages" required max="10000">
+              <div class="is-read">
+                <label for="status">Already Read</label>
+                <input class="checkbox" type="checkbox" id="status">
+              </div>
+              <button class="submit-btn" type="submit">Add to Library</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
