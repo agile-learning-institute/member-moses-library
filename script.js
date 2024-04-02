@@ -103,7 +103,7 @@ function addBookCard(name, author, pages, read) {
             <div class="book-author">${author}</div>
         </div>
         <div class="book-pages">Pages: <span class="pages">${pages}</span></div>
-        <div class="book-status">Status: <span class="status ${(read === true)?'read':''}">${readStatus}</span></div>
+        <div class="book-status">Status: <button class="status ${(read === true)?'read':''}">${readStatus}</button></div>
     </div>
     <div class="book-controls">
         <button class="delete-btn" type="button">
