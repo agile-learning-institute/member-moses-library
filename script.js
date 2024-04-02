@@ -33,6 +33,7 @@ addBookForm.addEventListener('submit', function(event) {
     addBookToLibrary();
     event.preventDefault();
     addBookOverlay.style.visibility = "hidden";
+    addBookForm.reset();
 })
 
 function addBookToLibrary() {
