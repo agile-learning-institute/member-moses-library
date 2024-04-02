@@ -6,6 +6,7 @@ const addMessage = document.querySelector('.add-message');
 const deleteMessage = document.querySelector('.delete-message');
 const submitter = document.querySelector('.submit-btn');
 const booksContainer = document.querySelector('.books-wrapper');
+const duplicateMessage = document.querySelector('.duplicate-message');
 
 
 let myLibrary = [];
@@ -42,23 +43,37 @@ function addBookToLibrary() {
     const pages = parseInt(document.querySelector('#pages').value);
     const read = document.querySelector('#read').value;
 
-    // create new book object with input values
-    const newBook = new Book(title, author, pages, read)
+    //check if book already exits before adding it to library
+    if (myLibrary.some(book => book.title.toLowerCase === title.toLowerCase) && 
+        myLibrary.some(book => book.author.toLowerCase === author.toLowerCase)) {
 
-    // add new book oject to libarayArray
-    myLibrary.push(newBook);
+        // alert that book already exists
+        duplicateMessage.style.visibility = 'visible';
 
-    // update display with current books in library after addition
-    displayBooks();
+        setTimeout(function() {
+            duplicateMessage.style.visibility = 'hidden';
+        }, 1000);
 
-    // alert that book is added
-    addMessage.style.visibility = 'visible';
+        return;
 
-    setTimeout(function() {
-        addMessage.style.visibility = 'hidden';
-    }, 1000);
+    } else {
+        // create new book object with input values
+        const newBook = new Book(title, author, pages, read)
+
+        // add new book oject to libarayArray
+        myLibrary.push(newBook);
+
+        // update display with current books in library after addition
+        displayBooks();
+
+        // alert that book is added
+        addMessage.style.visibility = 'visible';
+
+        setTimeout(function() {
+            addMessage.style.visibility = 'hidden';
+        }, 1000);
+    }
 }
-
 
 
 /* displaying books in LibraryArray */

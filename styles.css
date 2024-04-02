@@ -204,6 +204,11 @@ body {
   visibility: hidden;
 }
 
+.duplicate-message {
+  color: red;
+  visibility: hidden;
+}
+
 /* Book Info Input Form */
 
 .overlay-cont {
