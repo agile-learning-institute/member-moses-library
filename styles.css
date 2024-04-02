@@ -196,10 +196,12 @@ body {
 
 .add-message {
   color: green;
+  visibility: hidden;
 }
 
 .delete-message {
   color: red;
+  visibility: hidden;
 }
 
 /* Book Info Input Form */
