@@ -70,6 +70,24 @@ function addBookCard(name, author, pages, read) {
 }
 
 
+/* Remove Book from LibraryArray */
+
+function removeBook(e) {
+    
+    console.log('Delete button clicked');
+    const bookID = e.currentTarget.getAttribute('id');
+    console.log(bookID);
+    const BookIndex = myLibrary.findIndex(book => book.title === bookID)
+    console.log(BookIndex);
+
+    myLibrary.splice(BookIndex, 1);
+    console.table(myLibrary);
+
+    displayBooks();
+    
+}
+
+
 /* Hide and Unhide Input Form */
 
 addBookBtn.addEventListener('click', function() {
