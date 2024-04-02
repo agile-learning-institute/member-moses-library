@@ -7,6 +7,7 @@ const deleteMessage = document.querySelector('.delete-message');
 const submitter = document.querySelector('.submit-btn');
 const booksContainer = document.querySelector('.books-wrapper');
 const duplicateMessage = document.querySelector('.duplicate-message');
+const readCheckBox = document.querySelector(".read-checkbox");
 
 
 let myLibrary = [];
@@ -42,7 +43,7 @@ function addBookToLibrary() {
     const title = document.querySelector('#name').value;
     const author = document.querySelector('#author').value;
     const pages = parseInt(document.querySelector('#pages').value);
-    const read = document.querySelector('#read').value;
+    const read = document.querySelector('#read').checked; //checked status
 
     //check if book already exits before adding it to library
     if (myLibrary.some(book => book.title.toLowerCase() === title.toLowerCase()) && 
@@ -88,6 +89,9 @@ function displayBooks() {
 
 function addBookCard(name, author, pages, read) {
 
+    // assign usable or human friendly value to read Status
+    const readStatus = assignReadStatus(read);
+
     const bookCard = document.createElement('div');
     bookCard.classList.add('book-card');
 
@@ -99,7 +103,7 @@ function addBookCard(name, author, pages, read) {
             <div class="book-author">${author}</div>
         </div>
         <div class="book-pages">Pages: <span class="pages">${pages}</span></div>
-        <div class="book-status">Status: <span class="status">${read}</span></div>
+        <div class="book-status">Status: <span class="status">${readStatus}</span></div>
     </div>
     <div class="book-controls">
         <button class="delete-btn" type="button">
@@ -120,6 +124,17 @@ function addBookCard(name, author, pages, read) {
 }
 
 
+/* Assigning value to be used when displaying books */
+
+function assignReadStatus(isChecked) {
+    if (isChecked === true) {
+        return 'Read'
+    } else {
+        return 'Not Read'
+    }
+}
+
+
 /* Remove Book from LibraryArray */
 
 function removeBook(e) {
@@ -129,7 +144,6 @@ function removeBook(e) {
     const BookIndex = myLibrary.findIndex(book => book.title === bookID)
 
     myLibrary.splice(BookIndex, 1);
-    console.table(myLibrary);
 
     displayBooks();
 
