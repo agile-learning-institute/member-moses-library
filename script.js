@@ -44,8 +44,8 @@ function addBookToLibrary() {
     const read = document.querySelector('#read').value;
 
     //check if book already exits before adding it to library
-    if (myLibrary.some(book => book.title.toLowerCase === title.toLowerCase) && 
-        myLibrary.some(book => book.author.toLowerCase === author.toLowerCase)) {
+    if (myLibrary.some(book => book.title.toLowerCase() === title.toLowerCase()) && 
+        myLibrary.some(book => book.author.toLowerCase() === author.toLowerCase())) {
 
         // alert that book already exists
         duplicateMessage.style.visibility = 'visible';
