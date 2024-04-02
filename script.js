@@ -108,16 +108,21 @@ function addBookCard(name, author, pages, read) {
 
 function removeBook(e) {
     
-    console.log('Delete button clicked');
     const bookID = e.currentTarget.getAttribute('id');
-    console.log(bookID);
+
     const BookIndex = myLibrary.findIndex(book => book.title === bookID)
-    console.log(BookIndex);
 
     myLibrary.splice(BookIndex, 1);
     console.table(myLibrary);
 
     displayBooks();
+
+    // alert that book is added
+    deleteMessage.style.visibility = 'visible';
+
+    setTimeout(function() {
+        deleteMessage.style.visibility = 'hidden';
+    }, 1000);
     
 }
 
