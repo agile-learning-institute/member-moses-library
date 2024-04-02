@@ -22,129 +22,7 @@
         <div class="main-cont">
             <div class="books-cont">   
                 <div class="heading">Your Books</div>
-                <div class="books-wrapper">
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status read">Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status">Not Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status read">Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status">Not Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status read">Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status">Not Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status read">Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book">
-                            <div>
-                                <div class="book-name">Mastery<hr></div>
-                                <div class="book-author">Robert Greene</div>
-                            </div>
-                            <div class="book-pages">Pages: <span class="pages">564</span></div>
-                            <div class="book-status">Status: <span class="status">Not Read</span></div>
-                        </div>
-                        <div class="book-controls">
-                            <button class="delete-btn" type="button">
-                                <img src="./assests/delete.svg" alt="delete" class="delete-icon">
-                            </button>
-                        </div>
-                    </div>
-                    
-                </div>
+                <div class="books-wrapper"></div>
                 <div class="message-alert">
                     <div class="add-message">Book Added ✅</div>
                     <div class="delete-message">Book Deleted ✅</div>
@@ -156,12 +34,12 @@
         <div class="form-cont" id="form-cont">
             <form class="add-book-form" id="addBookForm">
               <h3>Add New Book</h3>
-              <input class="input" type="text" id="name" placeholder="Book Name" required maxlength="100">
-              <input class="input" type="text" id="author" placeholder="Author" maxlength="100">
-              <input class="input" type="number" id="pages" placeholder="Pages" required max="10000">
+              <input class="input" type="text" id="name" name="book-name" placeholder="Book Name" required maxlength="100">
+              <input class="input" type="text" id="author" name="book-author" placeholder="Author" maxlength="100">
+              <input class="input" type="number" id="pages" name="book-pages" placeholder="Pages" required max="10000">
               <div class="is-read">
-                <label for="status">Already Read</label>
-                <input class="checkbox" type="checkbox" id="status">
+                <label for="read">Already Read</label>
+                <input class="checkbox" type="checkbox" id="read" name="read">
               </div>
               <button class="submit-btn" type="submit">Add to Library</button>
             </form>
