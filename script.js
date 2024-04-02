@@ -8,7 +8,7 @@ const submitter = document.querySelector('.submit-btn');
 const booksContainer = document.querySelector('.books-wrapper');
 const duplicateMessage = document.querySelector('.duplicate-message');
 const readCheckBox = document.querySelector(".read-checkbox");
-
+const statusMessage = document.querySelector(".status-message");
 
 let myLibrary = [];
 
@@ -119,6 +119,13 @@ function addBookCard(name, author, pages, read) {
     // attach book name as id to uniquely identify the book to ease querying
     deleteButton.setAttribute('id', `${name}`)
 
+    // set dynamically toggleStatus event listeners to each book created
+    const toggleButton = bookCard.querySelector('.status');
+    toggleButton.addEventListener('click', toggleStatus); 
+
+    // attach book name as id to uniquely identify the book to ease querying
+    toggleButton.setAttribute('id', `${name}`);
+
     booksContainer.appendChild(bookCard);
 
 }
@@ -141,9 +148,9 @@ function removeBook(e) {
     
     const bookID = e.currentTarget.getAttribute('id');
 
-    const BookIndex = myLibrary.findIndex(book => book.title === bookID)
+    const bookIndex = myLibrary.findIndex(book => book.title === bookID)
 
-    myLibrary.splice(BookIndex, 1);
+    myLibrary.splice(bookIndex, 1);
 
     displayBooks();
 
@@ -154,6 +161,31 @@ function removeBook(e) {
         deleteMessage.style.visibility = 'hidden';
     }, 1000);
     
+}
+
+
+/* Toggle read status, while updating value in library array */
+
+function toggleStatus(e) {
+
+    const bookID = e.target.getAttribute('id');
+
+    const bookIndex = myLibrary.findIndex(book => book.title === bookID);
+
+    // toggle status from library array
+    const currentReadStatus = myLibrary[bookIndex].read;
+    myLibrary[bookIndex].read = !currentReadStatus;
+
+    // update or refresh display after toggling value
+    displayBooks();
+
+    // alert that book read status is updated
+    statusMessage.style.visibility = 'visible';
+
+    setTimeout(function() {
+        statusMessage.style.visibility = 'hidden';
+    }, 1000);
+
 }
 
 

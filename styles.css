@@ -199,17 +199,12 @@ body {
   background-color: rgb(248, 234, 209);
 }
 
-.add-message {
+.add-message, .status-message {
   color: green;
   visibility: hidden;
 }
 
-.delete-message {
-  color: red;
-  visibility: hidden;
-}
-
-.duplicate-message {
+.delete-message, .duplicate-message {
   color: red;
   visibility: hidden;
 }
