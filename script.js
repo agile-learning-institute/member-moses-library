@@ -26,6 +26,40 @@ function Book(title, author = 'Unknown', pages, read) {
 }
 
 
+/*  Adding book to LibraryArray */
+
+addBookForm.addEventListener('submit', function(event) {
+    addBookToLibrary();
+    event.preventDefault();
+    addBookOverlay.style.visibility = "hidden";
+})
+
+function addBookToLibrary() {
+
+    // get book details from form-input
+    const title = document.querySelector('#name').value;
+    const author = document.querySelector('#author').value;
+    const pages = parseInt(document.querySelector('#pages').value);
+    const read = document.querySelector('#read').value;
+
+    // create new book object with input values
+    const newBook = new Book(title, author, pages, read)
+
+    // add new book oject to libarayArray
+    myLibrary.push(newBook);
+
+    // update display with current books in library after addition
+    displayBooks();
+
+    // alert that book is added
+    addMessage.style.visibility = 'visible';
+
+    setTimeout(function() {
+        addMessage.style.visibility = 'hidden';
+    }, 1000);
+}
+
+
 
 /* displaying books in LibraryArray */
 
